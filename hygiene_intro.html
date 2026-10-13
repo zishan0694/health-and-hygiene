@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hygiene Intro & Do's/Don'ts</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .glass { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.3); }
+        body { background: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 100%); min-height: 100vh; }
+    </style>
+</head>
+<body class="font-sans text-slate-800 flex flex-col justify-between min-h-screen">
+    <nav class="sticky top-0 z-50 glass shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center space-x-3">
+                    <span class="p-2 bg-emerald-600 text-white rounded-xl shadow-lg"><i class="fa-solid font-bold fa-heart-pulse text-xl"></i></span>
+                    <span class="font-extrabold text-xl tracking-tight bg-gradient-to-r from-emerald-600 to-teal-700 bg-clip-text text-transparent">HealthHygiene Pro</span>
+                </div>
+                <div class="hidden md:flex space-x-6 font-medium text-slate-700">
+                    <a href="index.html" class="hover:text-emerald-600 transition">Home</a>
+                    <a href="hygiene_intro.html" class="text-emerald-600 font-bold border-b-2 border-emerald-600 pb-1">Hygiene Intro & Do/Don't</a>
+                    <a href="nutrition.html" class="hover:text-emerald-600 transition">Nutrition & Diet</a>
+                    <a href="personal_hygiene.html" class="hover:text-emerald-600 transition">Personal Hygiene</a>
+                    <a href="mental_wellness.html" class="hover:text-emerald-600 transition">Mental Wellness</a>
+                    <a href="tracker_quiz.html" class="hover:text-emerald-600 transition">Tracker & Quiz</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-6">Introduction to Hygiene</h1>
+        <p class="text-slate-600 mb-8 max-w-3xl leading-relaxed">Hygiene refers to conditions and practices that help to maintain health and prevent the spread of diseases. Modern hygiene practices encompass personal cleanlines, environmental sanitation, safe food handling, and respiratory care.</p>
+
+        <!-- Do's and Don'ts Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- DO'S -->
+            <div class="glass p-6 rounded-2xl border-l-8 border-emerald-500 shadow-sm">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-xl"><i class="fa-solid fa-check"></i></div>
+                    <h2 class="text-2xl font-bold text-emerald-900">WHAT TO DO (Do's)</h2>
+                </div>
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-emerald-600 mt-1"></i> Wash hands with soap and water for at least 20 seconds before eating and after using the restroom.</li>
+                    <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-emerald-600 mt-1"></i> Brush teeth twice daily and floss regularly to prevent oral infections and plaque buildup.</li>
+                    <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-emerald-600 mt-1"></i> Cover your mouth and nose with a tissue or elbow when coughing or sneezing.</li>
+                    <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-emerald-600 mt-1"></i> Keep fingernails clean, short, and trimmed regularly to prevent pathogen accumulation.</li>
+                    <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-emerald-600 mt-1"></i> Keep living areas clean, ventilated, and regularly disinfected.</li>
+                </ul>
+            </div>
+
+            <!-- DON'TS -->
+            <div class="glass p-6 rounded-2xl border-l-8 border-rose-500 shadow-sm">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center font-bold text-xl"><i class="fa-solid fa-xmark"></i></div>
+                    <h2 class="text-2xl font-bold text-rose-900">WHAT NOT TO DO (Don'ts)</h2>
+                </div>
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex items-start gap-2"><i class="fa-solid fa-circle-xmark text-rose-600 mt-1"></i> Do NOT touch your eyes, nose, or mouth with unwashed hands.</li>
+                    <li class="flex items-start gap-2"><i class="fa-solid fa-circle-xmark text-rose-600 mt-1"></i> Do NOT share personal items like towels, razors, toothbrushes, or comb with others.</li>
+                    <li class="flex items-start gap-2"><i class="fa-solid fa-circle-xmark text-rose-600 mt-1"></i> Do NOT wear damp or unwashed clothes and socks for extended durations.</li>
+                    <li class="flex items-start gap-2"><i class="fa-solid fa-circle-xmark text-rose-600 mt-1"></i> Do NOT consume uncovered street food or untreated water from unknown sources.</li>
+                    <li class="flex items-start gap-2"><i class="fa-solid fa-circle-xmark text-rose-600 mt-1"></i> Do NOT ignore minor skin cuts or open wounds without proper cleansing and bandaging.</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-8 text-center text-sm border-t border-slate-800 mt-12">
+        <p>&copy; 2026 Health & Hygiene College Project. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

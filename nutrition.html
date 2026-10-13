@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrition & Diet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .glass { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.3); }
+        body { background: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 100%); min-height: 100vh; }
+    </style>
+</head>
+<body class="font-sans text-slate-800 flex flex-col justify-between min-h-screen">
+    <nav class="sticky top-0 z-50 glass shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center space-x-3">
+                    <span class="p-2 bg-emerald-600 text-white rounded-xl shadow-lg"><i class="fa-solid font-bold fa-heart-pulse text-xl"></i></span>
+                    <span class="font-extrabold text-xl tracking-tight bg-gradient-to-r from-emerald-600 to-teal-700 bg-clip-text text-transparent">HealthHygiene Pro</span>
+                </div>
+                <div class="hidden md:flex space-x-6 font-medium text-slate-700">
+                    <a href="index.html" class="hover:text-emerald-600 transition">Home</a>
+                    <a href="hygiene_intro.html" class="hover:text-emerald-600 transition">Hygiene Intro & Do/Don't</a>
+                    <a href="nutrition.html" class="text-emerald-600 font-bold border-b-2 border-emerald-600 pb-1">Nutrition & Diet</a>
+                    <a href="personal_hygiene.html" class="hover:text-emerald-600 transition">Personal Hygiene</a>
+                    <a href="mental_wellness.html" class="hover:text-emerald-600 transition">Mental Wellness</a>
+                    <a href="tracker_quiz.html" class="hover:text-emerald-600 transition">Tracker & Quiz</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-6">Nutrition & Healthy Diet Guide</h1>
+        
+        <!-- BMI Calculator Tool -->
+        <div class="glass p-8 rounded-2xl shadow-sm max-w-xl mb-12">
+            <h2 class="text-2xl font-bold text-slate-900 mb-4"><i class="fa-solid fa-calculator text-emerald-600 mr-2"></i>Interactive BMI Calculator</h2>
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-sm font-semibold mb-1">Weight (kg)</label>
+                    <input type="number" id="weight" placeholder="e.g. 68" class="w-full p-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-emerald-500 outline-none">
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold mb-1">Height (cm)</label>
+                    <input type="number" id="height" placeholder="e.g. 172" class="w-full p-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-emerald-500 outline-none">
+                </div>
+                <button onclick="calcBMI()" class="w-full py-3 bg-emerald-600 text-white rounded-xl font-bold shadow hover:bg-emerald-700 transition">Calculate BMI</button>
+                <div id="bmiResult" class="hidden mt-4 p-4 rounded-xl bg-emerald-50 text-emerald-900 text-center font-bold"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-8 text-center text-sm border-t border-slate-800 mt-12">
+        <p>&copy; 2026 Health & Hygiene College Project. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function calcBMI() {
+            const w = parseFloat(document.getElementById('weight').value);
+            const h = parseFloat(document.getElementById('height').value) / 100;
+            const res = document.getElementById('bmiResult');
+            if (w > 0 && h > 0) {
+                const bmi = (w / (h * h)).toFixed(1);
+                let cat = 'Normal weight';
+                if (bmi < 18.5) cat = 'Underweight';
+                else if (bmi >= 25) cat = 'Overweight';
+                res.innerHTML = `Your BMI is <span class="text-xl">${bmi}</span> (${cat})`;
+                res.classList.remove('hidden');
+            }
+        }
+    </script>
+</body>
+</html>

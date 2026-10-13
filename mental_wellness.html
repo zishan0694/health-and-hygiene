@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Wellness</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .glass { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.3); }
+        body { background: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 100%); min-height: 100vh; }
+    </style>
+</head>
+<body class="font-sans text-slate-800 flex flex-col justify-between min-h-screen">
+    <nav class="sticky top-0 z-50 glass shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center space-x-3">
+                    <span class="p-2 bg-emerald-600 text-white rounded-xl shadow-lg"><i class="fa-solid font-bold fa-heart-pulse text-xl"></i></span>
+                    <span class="font-extrabold text-xl tracking-tight bg-gradient-to-r from-emerald-600 to-teal-700 bg-clip-text text-transparent">HealthHygiene Pro</span>
+                </div>
+                <div class="hidden md:flex space-x-6 font-medium text-slate-700">
+                    <a href="index.html" class="hover:text-emerald-600 transition">Home</a>
+                    <a href="hygiene_intro.html" class="hover:text-emerald-600 transition">Hygiene Intro & Do/Don't</a>
+                    <a href="nutrition.html" class="hover:text-emerald-600 transition">Nutrition & Diet</a>
+                    <a href="personal_hygiene.html" class="hover:text-emerald-600 transition">Personal Hygiene</a>
+                    <a href="mental_wellness.html" class="text-emerald-600 font-bold border-b-2 border-emerald-600 pb-1">Mental Wellness</a>
+                    <a href="tracker_quiz.html" class="hover:text-emerald-600 transition">Tracker & Quiz</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-6">Mental Wellness & Stress Relief</h1>
+        <div class="glass p-8 rounded-2xl max-w-lg text-center mx-auto shadow-sm">
+            <h2 class="text-xl font-bold text-indigo-900 mb-4"><i class="fa-solid fa-wind mr-2 text-indigo-600"></i>Box Breathing Exercise</h2>
+            <div id="breathBox" class="w-32 h-32 rounded-full bg-indigo-500 mx-auto flex items-center justify-center text-white font-bold text-lg shadow-lg transition-all duration-1000">Inhale</div>
+            <p class="text-sm text-slate-500 mt-4">Inhale 4s &bull; Hold 4s &bull; Exhale 4s &bull; Rest 4s</p>
+        </div>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-8 text-center text-sm border-t border-slate-800 mt-12">
+        <p>&copy; 2026 Health & Hygiene College Project. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const phases = ["Inhale", "Hold", "Exhale", "Rest"];
+        let idx = 0;
+        const box = document.getElementById('breathBox');
+        setInterval(() => {
+            idx = (idx + 1) % phases.length;
+            box.innerText = phases[idx];
+            if(idx === 0) box.className = "w-32 h-32 rounded-full bg-indigo-500 mx-auto flex items-center justify-center text-white font-bold text-lg shadow-lg scale-110 transition-all duration-1000";
+            else if(idx === 2) box.className = "w-32 h-32 rounded-full bg-indigo-400 mx-auto flex items-center justify-center text-white font-bold text-lg shadow-lg scale-90 transition-all duration-1000";
+        }, 3000);
+    </script>
+</body>
+</html>
